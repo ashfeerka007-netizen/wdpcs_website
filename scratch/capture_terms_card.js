@@ -86,13 +86,13 @@ async function capture() {
   await sleep(1500);
 
   await client.send('Runtime.evaluate', {
-    expression: `window.scrollTo(0, 0);`
+    expression: `document.getElementById('rooms-highlight-title').scrollIntoView({ block: 'center' });`
   });
   await sleep(500);
 
   const shot = await client.send('Page.captureScreenshot', { format: 'png' });
-  fs.writeFileSync(path.join(outDir, 'header_without_topbar.png'), Buffer.from(shot.data, 'base64'));
-  console.log('Header without topbar screenshot captured successfully.');
+  fs.writeFileSync(path.join(outDir, 'index_rooms_highlight.png'), Buffer.from(shot.data, 'base64'));
+  console.log('Index rooms highlight screenshot captured successfully.');
 
   client.close();
   chrome.kill();
