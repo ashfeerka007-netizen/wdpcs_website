@@ -85,29 +85,14 @@ async function capture() {
   await client.send('Page.navigate', { url: 'http://localhost:8080/contact.html' });
   await sleep(2000);
 
-  // Fill in required fields except checkbox, then submit
   await client.send('Runtime.evaluate', {
-    expression: `
-      document.getElementById('fullName').value = 'Test User';
-      document.getElementById('phone').value = '9847123456';
-      document.getElementById('email').value = 'test@example.com';
-      document.getElementById('enquiryType').value = 'General Enquiry';
-      document.getElementById('message').value = 'Testing enquiry form terms agreement notice.';
-      
-      // Compute captcha answer
-      const qText = document.getElementById('captchaQuestion').textContent;
-      const nums = qText.match(/\\d+/g).map(Number);
-      document.getElementById('captchaAnswer').value = nums[0] + nums[1];
-
-      // Submit form without checking terms checkbox
-      document.getElementById('enquirySubmitBtn').click();
-    `
+    expression: `document.getElementById('societyEnquiryForm').scrollIntoView({ block: 'center' });`
   });
-  await sleep(800);
+  await sleep(500);
 
   const shot = await client.send('Page.captureScreenshot', { format: 'png' });
-  fs.writeFileSync(path.join(outDir, 'contact_alert_with_checkbox.png'), Buffer.from(shot.data, 'base64'));
-  console.log('Validation alert with checkbox screenshot captured successfully.');
+  fs.writeFileSync(path.join(outDir, 'contact_form_with_whatsapp_btn.png'), Buffer.from(shot.data, 'base64'));
+  console.log('Contact form with WhatsApp button screenshot captured successfully.');
 
   client.close();
   chrome.kill();
