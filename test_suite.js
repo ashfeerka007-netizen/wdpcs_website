@@ -491,17 +491,18 @@ PUBLIC_INDEXABLE_PAGES.forEach(page => {
   assert(sitemapContent.includes(expectedUrl), `sitemap.xml contains indexable URL: ${expectedUrl}`);
 });
 
-// 10. OFFICIAL ENQUIRY FORM & MAILBOX ROUTING VERIFICATION (wdpcs.208@gmail.com)
-console.log('\n--- 10. Official Enquiry Form & Mailbox Routing Verification ---');
+// 10. OFFICIAL WHATSAPP ENQUIRY FORM ROUTING VERIFICATION (+91 8301995940)
+console.log('\n--- 10. Official WhatsApp Enquiry Form Routing Verification ---');
 const contactFormHtml = fs.readFileSync(path.join(ROOT_DIR, 'contact.html'), 'utf-8');
 const contactFormJs = fs.readFileSync(path.join(ROOT_DIR, 'js/contact.js'), 'utf-8');
 
-assert(contactFormHtml.includes('wdpcs.208@gmail.com'), 'contact.html explicitly states wdpcs.208@gmail.com');
-assert(contactFormHtml.includes('action="https://formsubmit.co/wdpcs.208@gmail.com"'), 'contact.html routes form action to wdpcs.208@gmail.com');
+assert(contactFormHtml.includes('8301995940'), 'contact.html explicitly references WhatsApp helpline 8301995940');
 assert(contactFormHtml.includes('id="societyEnquiryForm"'), 'contact.html contains #societyEnquiryForm');
-assert(contactFormJs.includes('wdpcs.208@gmail.com'), 'js/contact.js targets wdpcs.208@gmail.com');
-assert(contactFormJs.includes('formsubmit.co/ajax/'), 'js/contact.js uses FormSubmit AJAX endpoint');
-assert(contactFormJs.includes('_replyto'), 'js/contact.js binds sender email to reply-to');
+assert(contactFormHtml.includes('id="enquiryWhatsAppBtn"'), 'contact.html contains WhatsApp submit button');
+assert(contactFormHtml.includes('id="termsConsentCard"'), 'contact.html contains terms consent card');
+assert(contactFormJs.includes('918301995940'), 'js/contact.js targets WhatsApp number 918301995940');
+assert(contactFormJs.includes('https://wa.me/'), 'js/contact.js generates wa.me direct message link');
+assert(contactFormJs.includes('termsConsentCard'), 'js/contact.js validates and styles terms consent');
 
 console.log('\n==================================================');
 console.log(`TEST SUMMARY: ${passedTests}/${totalTests} tests passed (${failedTests} failures)`);

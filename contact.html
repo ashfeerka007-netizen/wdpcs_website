@@ -336,27 +336,21 @@
 
         </div>
 
-        <!-- Right Column: Official Enquiry Form -->
+        <!-- Right Column: Official WhatsApp Enquiry Form -->
         <div>
           <div class="enquiry-form-card">
-            <div style="display:inline-flex; align-items:center; gap:6px; background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; padding:4px 10px; border-radius:20px; margin-bottom:var(--space-3);">
-              <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-              Direct Delivery to wdpcs.208@gmail.com
+            <div style="display:inline-flex; align-items:center; gap:6px; background:#f0fdf4; color:#15803d; border:1px solid #bbf7d0; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; padding:4px 12px; border-radius:20px; margin-bottom:var(--space-3);">
+              <svg viewBox="0 0 24 24" style="width:14px; height:14px; fill:currentColor;"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.35.99 2.51c.12.16 1.7 2.6 4.12 3.65.58.25 1.02.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.29-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.53.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.45-1.35-1.69-.14-.24-.02-.37.1-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47z"/></svg>
+              Official WhatsApp Desk: +91 8301995940
             </div>
-            <h2 style="font-size: var(--text-2xl); color: var(--color-primary-950); margin-bottom: var(--space-2);">Submit an Official Enquiry</h2>
+            <h2 style="font-size: var(--text-2xl); color: var(--color-primary-950); margin-bottom: var(--space-2);">Submit Enquiry via WhatsApp</h2>
             <p style="font-size: var(--text-sm); color: var(--color-neutral-600); margin-bottom: var(--space-6);">
-              Please complete the enquiry form below. Submissions are dispatched directly to the Society's official mailbox (<strong style="color:var(--color-primary-900);">wdpcs.208@gmail.com</strong>). Society staff will review your query and respond during official office hours.
+              Fill in your details below to transmit your enquiry directly to the Society's official WhatsApp helpline (<strong style="color:var(--color-primary-900);">+91 8301995940</strong>). Society officers will respond promptly during office hours.
             </p>
 
             <div id="formStatusAlert" class="alert-box" style="display: none;"></div>
 
-            <form id="societyEnquiryForm" action="https://formsubmit.co/wdpcs.208@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
-              <!-- FormSubmit Target Routing & Formatting -->
-              <input type="hidden" name="_subject" id="formSubmitSubject" value="New Official Enquiry - Wayanad District Police Co-operative Society">
-              <input type="hidden" name="_replyto" id="formSubmitReplyTo" value="">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_autoresponse" value="Thank you for submitting your enquiry to Wayanad District Police Co-operative Society Ltd. No. W 208 (Kalpetta North). Your message has been received by our administrative desk (wdpcs.208@gmail.com). Our officers will review your details and respond during office working hours (10:00 AM - 5:00 PM).">
+            <form id="societyEnquiryForm" novalidate>
               
               <!-- Full Name (Required) -->
               <div class="form-group">
@@ -370,40 +364,32 @@
                 <!-- Member ID (Optional) -->
                 <div class="form-group">
                   <label for="memberId" class="form-label">
-                    Member ID / Number <span style="font-weight: normal; color: var(--color-neutral-500); font-size: 0.8rem;">(Optional)</span>
+                    Member ID / Department No <span style="font-weight: normal; color: var(--color-neutral-500); font-size: 0.8rem;">(Optional)</span>
                   </label>
-                  <input type="text" id="memberId" name="memberId" class="form-input" placeholder="e.g. W208-1234">
+                  <input type="text" id="memberId" name="memberId" class="form-input" placeholder="e.g. W208-1234 or Police Dept">
                 </div>
 
-                <!-- Phone Number (Required) -->
+                <!-- Phone / WhatsApp Number (Required) -->
                 <div class="form-group">
                   <label for="phone" class="form-label">
-                    Phone Number <span class="required-star">*</span>
+                    Mobile / WhatsApp Number <span class="required-star">*</span>
                   </label>
                   <input type="tel" id="phone" name="phone" class="form-input" placeholder="10-digit mobile number" required pattern="[0-9]{10}">
                 </div>
               </div>
 
-              <!-- Email Address (Required) -->
-              <div class="form-group">
-                <label for="email" class="form-label">
-                  Email Address <span class="required-star">*</span>
-                </label>
-                <input type="email" id="email" name="email" class="form-input" placeholder="name@example.com" required>
-              </div>
-
               <!-- Enquiry Type (Required) -->
               <div class="form-group">
                 <label for="enquiryType" class="form-label">
-                  Enquiry Type <span class="required-star">*</span>
+                  Enquiry Classification <span class="required-star">*</span>
                 </label>
                 <select id="enquiryType" name="enquiryType" class="form-select" required>
-                  <option value="" disabled selected>Select Enquiry Classification</option>
-                  <option value="General Enquiry">General Enquiry</option>
-                  <option value="Loan Enquiry">Loan Enquiry</option>
-                  <option value="Deposit Enquiry">Deposit Enquiry</option>
-                  <option value="Application/Form Enquiry">Application / Form Enquiry</option>
-                  <option value="Room/Dormitory Enquiry">Room / Dormitory Enquiry</option>
+                  <option value="" disabled selected>Select Enquiry Category</option>
+                  <option value="Loan Enquiry">Loan Enquiry (Emergency, MT, HP, Festival, Deposit Loans)</option>
+                  <option value="Deposit Enquiry">Deposit Enquiry (FD, RD, Savings Schemes)</option>
+                  <option value="Application/Form Enquiry">Application / Form Submission Enquiry</option>
+                  <option value="Room/Dormitory Enquiry">Room / Dormitory Booking Enquiry</option>
+                  <option value="General Enquiry">General Administrative Enquiry</option>
                   <option value="Other">Other Institutional Matter</option>
                 </select>
               </div>
@@ -411,17 +397,9 @@
               <!-- Message (Required) -->
               <div class="form-group">
                 <label for="message" class="form-label">
-                  Message <span class="required-star">*</span>
+                  Enquiry Message <span class="required-star">*</span>
                 </label>
-                <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Please state the details of your enquiry clearly..." required></textarea>
-              </div>
-
-              <!-- Attachment (Optional) -->
-              <div class="form-group">
-                <label for="attachment" class="form-label">
-                  Attachment <span style="font-weight: normal; color: var(--color-neutral-500); font-size: 0.8rem;">(Optional, PDF / JPG up to 5MB)</span>
-                </label>
-                <input type="file" id="attachment" name="attachment" class="form-input" accept=".pdf,.jpg,.jpeg,.png">
+                <textarea id="message" name="message" class="form-textarea" rows="4" placeholder="Please type the details of your query clearly..." required></textarea>
               </div>
 
               <!-- Security Captcha -->
@@ -434,40 +412,33 @@
 
               <!-- Terms & Conditions and Privacy Agreement Checkbox Card -->
               <div class="form-group" style="margin-top: var(--space-5); margin-bottom: var(--space-6);">
-                <label for="privacyConsent" class="terms-consent-card" id="termsConsentCard">
+                <label for="privacyConsent" class="terms-consent-card checked" id="termsConsentCard">
                   <div class="terms-checkbox-wrap">
-                    <input type="checkbox" id="privacyConsent" name="privacyConsent" required aria-required="true">
+                    <input type="checkbox" id="privacyConsent" name="privacyConsent" checked required aria-required="true">
                   </div>
                   <div class="terms-consent-content">
                     <strong style="display:block; color:var(--color-primary-950); margin-bottom:3px; font-size:var(--text-sm);">
-                      Terms &amp; Conditions and Privacy Agreement <span class="required-star">*</span>
+                      Terms &amp; Conditions Agreement <span class="required-star">*</span>
                     </strong>
                     <span style="font-size:0.875rem; color:var(--color-neutral-700); line-height:1.5; display:block;">
-                      I agree to the <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a> and <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> of Wayanad District Police Co-operative Society Ltd. No. W 208, and I confirm that all information provided in this enquiry is true and accurate.
+                      I agree to the <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a> and <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> of Wayanad District Police Co-operative Society Ltd. No. W 208, and I confirm that all provided information is accurate.
                     </span>
                   </div>
                 </label>
               </div>
 
-              <!-- Action Buttons: WhatsApp Direct & Official Email Submission -->
-              <div style="display:flex; flex-direction:column; gap:var(--space-3); margin-top:var(--space-2);">
-                <button type="button" id="enquiryWhatsAppBtn" class="btn btn-whatsapp btn-lg" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px;">
-                  <svg viewBox="0 0 24 24" style="width: 22px; height: 22px; fill: currentColor;"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.35.99 2.51c.12.16 1.7 2.6 4.12 3.65.58.25 1.02.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.29-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.53.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.45-1.35-1.69-.14-.24-.02-.37.1-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47z"/></svg>
-                  Send Enquiry directly to WhatsApp (8301995940)
-                </button>
-
-                <button type="submit" id="enquirySubmitBtn" class="btn btn-primary btn-lg" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 8px;">
-                  <svg viewBox="0 0 24 24" style="width: 18px; height: 18px; fill: currentColor;"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-                  Submit Enquiry via Email (wdpcs.208@gmail.com)
-                </button>
-              </div>
+              <!-- Primary Submission Button: WhatsApp Direct -->
+              <button type="submit" id="enquiryWhatsAppBtn" class="btn btn-whatsapp btn-lg" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; font-size: 1.05rem; padding: 14px 20px;">
+                <svg viewBox="0 0 24 24" style="width: 24px; height: 24px; fill: currentColor;"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24M8.53 7.33c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02s.87 2.35.99 2.51c.12.16 1.7 2.6 4.12 3.65.58.25 1.02.4 1.38.51.58.18 1.11.16 1.53.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.47-.29-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.53.06-.24-.12-1.03-.38-1.96-1.21-.72-.65-1.21-1.45-1.35-1.69-.14-.24-.02-.37.1-.49.11-.11.24-.29.37-.43.12-.14.16-.24.24-.4.08-.16.04-.31-.02-.43-.06-.12-.55-1.32-.75-1.81-.2-.48-.4-.41-.55-.42h-.47z"/></svg>
+                Send Enquiry via WhatsApp (+91 8301995940)
+              </button>
 
             </form>
 
             <div class="alert-box alert-info" style="margin-top: var(--space-6); margin-bottom: 0;">
               <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
               <span>
-                <strong>Official Routing:</strong> Form submissions are delivered directly to <strong>wdpcs.208@gmail.com</strong>. This public enquiry form does not request passwords, MPINs, or sensitive financial account numbers.
+                <strong>Direct Delivery:</strong> Enquiries are delivered instantly to WhatsApp <strong>+91 8301995940</strong>. Society administrative staff review and attend queries during office hours (10:00 AM to 5:00 PM).
               </span>
             </div>
 
