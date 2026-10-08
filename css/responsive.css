@@ -465,7 +465,7 @@ textarea,
   }
 
   .room-card-media {
-    height: 200px;
+    height: auto;
   }
 
   .page-banner {
