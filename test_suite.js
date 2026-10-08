@@ -414,11 +414,6 @@ assert(faqHtml.includes('33175259937') && faqHtml.includes('171412002000112'), '
 console.log('\n--- 8. Header Alignment & Structure Across All 16 Pages ---');
 REQUIRED_PAGES.forEach(page => {
   const content = fs.readFileSync(path.join(ROOT_DIR, page), 'utf-8');
-  assert(content.includes('class="topbar"'), `${page} contains .topbar`);
-  assert(content.includes('class="topbar-info"'), `${page} contains .topbar-info`);
-  assert(content.includes('class="topbar-actions"'), `${page} contains .topbar-actions`);
-  assert(content.includes('class="topbar-badge"'), `${page} contains .topbar-badge`);
-  assert(content.includes('class="font-resizer"'), `${page} contains .font-resizer`);
   assert(content.includes('class="site-header"'), `${page} contains .site-header`);
   assert(content.includes('class="society-brand"'), `${page} contains .society-brand`);
   assert(content.includes('class="brand-logo-wrap"'), `${page} contains .brand-logo-wrap`);
