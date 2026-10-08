@@ -339,14 +339,24 @@
         <!-- Right Column: Official Enquiry Form -->
         <div>
           <div class="enquiry-form-card">
+            <div style="display:inline-flex; align-items:center; gap:6px; background:#eff6ff; color:#1d4ed8; border:1px solid #bfdbfe; font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.5px; padding:4px 10px; border-radius:20px; margin-bottom:var(--space-3);">
+              <svg style="width:14px; height:14px; fill:currentColor;" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              Direct Delivery to wdpcs.208@gmail.com
+            </div>
             <h2 style="font-size: var(--text-2xl); color: var(--color-primary-950); margin-bottom: var(--space-2);">Submit an Official Enquiry</h2>
             <p style="font-size: var(--text-sm); color: var(--color-neutral-600); margin-bottom: var(--space-6);">
-              Please complete the enquiry form below. Society staff will review your query and respond during official office hours.
+              Please complete the enquiry form below. Submissions are dispatched directly to the Society's official mailbox (<strong style="color:var(--color-primary-900);">wdpcs.208@gmail.com</strong>). Society staff will review your query and respond during official office hours.
             </p>
 
             <div id="formStatusAlert" class="alert-box" style="display: none;"></div>
 
-            <form id="societyEnquiryForm" novalidate>
+            <form id="societyEnquiryForm" action="https://formsubmit.co/wdpcs.208@gmail.com" method="POST" enctype="multipart/form-data" novalidate>
+              <!-- FormSubmit Target Routing & Formatting -->
+              <input type="hidden" name="_subject" id="formSubmitSubject" value="New Official Enquiry - Wayanad District Police Co-operative Society">
+              <input type="hidden" name="_replyto" id="formSubmitReplyTo" value="">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_autoresponse" value="Thank you for submitting your enquiry to Wayanad District Police Co-operative Society Ltd. No. W 208 (Kalpetta North). Your message has been received by our administrative desk (wdpcs.208@gmail.com). Our officers will review your details and respond during office working hours (10:00 AM - 5:00 PM).">
               
               <!-- Full Name (Required) -->
               <div class="form-group">
@@ -422,19 +432,26 @@
                 <input type="number" id="captchaAnswer" name="captchaAnswer" class="form-input" style="max-width: 160px;" placeholder="Answer" required>
               </div>
 
-              <!-- Data Privacy & Consent Checkbox -->
-              <div class="form-group" style="margin-top: var(--space-4); margin-bottom: var(--space-6);">
-                <label class="form-checkbox-label">
-                  <input type="checkbox" id="privacyConsent" name="privacyConsent" required>
-                  <span>
-                    I confirm that the information submitted above is accurate, and I consent to the processing of these details by the Wayanad District Police Co-operative Society Ltd. No. W 208 for responding to my enquiry in accordance with the <a href="privacy-policy.html" target="_blank">Privacy Policy</a>. <span class="required-star">*</span>
-                  </span>
+              <!-- Terms & Conditions and Privacy Agreement Checkbox Card -->
+              <div class="form-group" style="margin-top: var(--space-5); margin-bottom: var(--space-6);">
+                <label for="privacyConsent" class="terms-consent-card" id="termsConsentCard">
+                  <div class="terms-checkbox-wrap">
+                    <input type="checkbox" id="privacyConsent" name="privacyConsent" required aria-required="true">
+                  </div>
+                  <div class="terms-consent-content">
+                    <strong style="display:block; color:var(--color-primary-950); margin-bottom:3px; font-size:var(--text-sm);">
+                      Terms &amp; Conditions and Privacy Agreement <span class="required-star">*</span>
+                    </strong>
+                    <span style="font-size:0.875rem; color:var(--color-neutral-700); line-height:1.5; display:block;">
+                      I agree to the <a href="terms.html" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a> and <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> of Wayanad District Police Co-operative Society Ltd. No. W 208, and I confirm that all information provided in this enquiry is true and accurate.
+                    </span>
+                  </div>
                 </label>
               </div>
 
               <!-- Submit Button -->
               <button type="submit" id="enquirySubmitBtn" class="btn btn-primary btn-lg" style="width: 100%;">
-                Submit Enquiry
+                Submit Enquiry to Society
               </button>
 
             </form>
@@ -442,7 +459,7 @@
             <div class="alert-box alert-info" style="margin-top: var(--space-6); margin-bottom: 0;">
               <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
               <span>
-                <strong>Privacy Safeguard:</strong> This public enquiry form does not request passwords, MPINs, or sensitive financial account numbers.
+                <strong>Official Routing:</strong> Form submissions are delivered directly to <strong>wdpcs.208@gmail.com</strong>. This public enquiry form does not request passwords, MPINs, or sensitive financial account numbers.
               </span>
             </div>
 
@@ -573,10 +590,32 @@
 
         </div>
 
-        <div class="alert-box alert-info" style="margin-top: var(--space-6); font-size: var(--text-xs);">
-          <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-          <div>
-            <strong>Member Remittance Guidance:</strong> After transferring funds via UPI or IMPS/NEFT/RTGS, please send the transaction reference / UTR number along with your Member ID and payment purpose via WhatsApp to <a href="https://wa.me/918301995940" target="_blank" rel="noopener noreferrer" style="font-weight:700; color:inherit;">8301995940</a> or inform the Society office at <a href="tel:04936205940" style="font-weight:700; color:inherit;">04936 205940</a> for prompt ledger reconciliation and receipt generation.
+        <!-- Prominent Member Remittance Guidance Banner -->
+        <div class="remittance-guidance-card" role="region" aria-label="Member Remittance Guidance">
+          <div class="remittance-guidance-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+          </div>
+          <div class="remittance-guidance-content">
+            <div class="remittance-guidance-title">
+              <span>Member Remittance Guidance</span>
+              <span class="remittance-guidance-badge">
+                <svg style="width:12px; height:12px; fill:currentColor;" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+                Important Action Required
+              </span>
+            </div>
+            <p class="remittance-guidance-text">
+              <strong>Member Remittance Guidance:</strong> After transferring funds via UPI or IMPS/NEFT/RTGS, please send the transaction reference / UTR number along with your Member ID and payment purpose via WhatsApp to <a href="https://wa.me/918301995940" target="_blank" rel="noopener noreferrer" style="font-weight:800; color:var(--color-primary-900); text-decoration:underline;">8301995940</a> or inform the Society office at <a href="tel:04936205940" style="font-weight:800; color:var(--color-primary-900); text-decoration:underline;">04936 205940</a> for prompt ledger reconciliation and receipt generation.
+            </p>
+            <div class="remittance-guidance-actions">
+              <a href="https://wa.me/918301995940" target="_blank" rel="noopener noreferrer" class="remittance-action-btn whatsapp" title="Send UTR details via WhatsApp to 8301995940">
+                <svg style="width:20px; height:20px; fill:currentColor;" viewBox="0 0 24 24"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2zm.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-1.48 0-2.93-.4-4.2-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.196 8.196 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24zm4.52 11.64c-.25-.13-1.47-.72-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.06-.39-2.02-1.24-.74-.66-1.24-1.47-1.39-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.38-.44.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.44-.06-.13-.56-1.34-.76-1.84-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.44.06-.67.31-.23.25-.88.86-.88 2.1 0 1.24.9 2.44 1.03 2.61.13.17 1.77 2.71 4.3 3.8 2.52 1.09 2.52.73 2.98.68.45-.04 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.23-.17-.48-.29z"/></svg>
+                <span>Send UTR via WhatsApp (8301995940)</span>
+              </a>
+              <a href="tel:04936205940" class="remittance-action-btn phone" title="Call Society Office at 04936 205940">
+                <svg style="width:18px; height:18px; fill:currentColor;" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 0 0-1.01.24l-2.2 2.2a15.149 15.149 0 0 1-6.59-6.59l2.2-2.21a.96.96 0 0 0 .25-1A11.36 11.36 0 0 1 8.5 3.99c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-.99-1.11z"/></svg>
+                <span>Call Office (04936 205940)</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

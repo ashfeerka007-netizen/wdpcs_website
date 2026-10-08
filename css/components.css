@@ -1217,8 +1217,71 @@
 .form-checkbox-label input[type="checkbox"] {
   margin-top: 3px;
   accent-color: var(--color-primary-700);
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* Enhanced Terms & Privacy Agreement Card */
+.terms-consent-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  background: #f8fafc;
+  border: 1.5px solid #cbd5e1;
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+}
+
+.terms-consent-card:hover {
+  background: #f1f5f9;
+  border-color: var(--color-primary-600);
+}
+
+.terms-consent-card.checked,
+.terms-consent-card:has(input[type="checkbox"]:checked) {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.terms-consent-card.has-error {
+  border-color: #ef4444 !important;
+  background: #fef2f2 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2);
+}
+
+.terms-checkbox-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.terms-checkbox-wrap input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--color-primary-700);
+  margin: 0;
+}
+
+.terms-consent-content {
+  flex: 1;
+}
+
+.terms-consent-content a {
+  color: var(--color-primary-700);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.terms-consent-content a:hover {
+  color: var(--color-primary-900);
 }
 
 /* Alert / Callout Boxes */
@@ -1867,5 +1930,167 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ==========================================================================
+   17. Member Remittance Guidance Prominent Banner
+   ========================================================================== */
+.remittance-guidance-card {
+  margin-top: var(--space-8);
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 55%, #f0fdf4 100%);
+  border: 2px solid #38bdf8;
+  border-left: 8px solid var(--color-primary-800);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6) var(--space-8);
+  box-shadow: 0 10px 25px -5px rgba(15, 36, 66, 0.12), 0 4px 6px -2px rgba(15, 36, 66, 0.05);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+  position: relative;
+  overflow: hidden;
+}
+
+.remittance-guidance-icon {
+  width: 54px;
+  height: 54px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-900);
+  color: var(--color-white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(15, 36, 66, 0.25);
+  margin-top: 2px;
+}
+
+.remittance-guidance-icon svg {
+  width: 28px;
+  height: 28px;
+  fill: currentColor;
+}
+
+.remittance-guidance-content {
+  flex: 1 1 auto;
+}
+
+.remittance-guidance-title {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-primary-950);
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.remittance-guidance-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background: var(--color-primary-900);
+  color: #6ee7b7;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.remittance-guidance-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--color-neutral-800);
+  margin-bottom: var(--space-4);
+  font-weight: 500;
+}
+
+.remittance-guidance-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.remittance-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: var(--radius-md);
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  box-shadow: var(--shadow-sm);
+}
+
+.remittance-action-btn.whatsapp {
+  background: #25D366;
+  color: #ffffff;
+  border: 1px solid #1ebe5d;
+}
+
+.remittance-action-btn.whatsapp:hover {
+  background: #20ba59;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+
+.remittance-action-btn.phone {
+  background: var(--color-primary-900);
+  color: var(--color-white);
+  border: 1px solid var(--color-primary-950);
+}
+
+.remittance-action-btn.phone:hover {
+  background: var(--color-primary-800);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  text-decoration: none;
+}
+
+@media (max-width: 640px) {
+  .remittance-guidance-card {
+    flex-direction: column;
+    padding: var(--space-5);
+    gap: var(--space-3);
+  }
+  
+  .remittance-guidance-icon {
+    width: 44px;
+    height: 44px;
+  }
+  
+  .remittance-guidance-icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .remittance-guidance-title {
+    font-size: 1.1rem;
+  }
+
+  .remittance-guidance-text {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .remittance-guidance-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .remittance-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 
 

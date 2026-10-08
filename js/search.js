@@ -41,11 +41,11 @@ const SITE_SEARCH_INDEX = [
     keywords: "gallery photos images events meetings agm facilities picture archive"
   },
   {
-    title: "Society Rooms & Dormitories",
+    title: "Society Rooms & Dormitories (Mountain Stay Retreat)",
     category: "Facilities",
     url: "rooms-dormitories.html",
-    description: "Accommodation facilities in Wayanad with links to authorised external booking applications for guest rooms and dormitories.",
-    keywords: "rooms dormitories accommodation booking stay lodging guest house police transit"
+    description: "Accommodation facilities in Wayanad with direct links to Mountain Stay Retreat for guest rooms, dormitory, and suite room details and online booking.",
+    keywords: "rooms dormitories accommodation booking stay lodging guest house police transit mountain stay retrete retreat suite suit room details"
   },
   {
     title: "Contact & Enquiries",
