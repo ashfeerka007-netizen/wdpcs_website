@@ -48,6 +48,7 @@ const REQUIRED_ASSETS = [
   'assets/images/room-guest-room.svg',
   'assets/images/room-dormitory.svg',
   'assets/images/society-rooms-dormitory.jpg',
+  'assets/images/society-guest-room.jpg',
   'assets/images/gallery-1.svg',
   'assets/images/gallery-2.svg',
   'assets/images/gallery-3.svg',
