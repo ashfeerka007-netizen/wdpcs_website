@@ -82,17 +82,17 @@ async function capture() {
     mobile: false
   });
 
-  await client.send('Page.navigate', { url: 'http://localhost:8080/contact.html' });
-  await sleep(2000);
+  await client.send('Page.navigate', { url: 'http://localhost:8080/index.html' });
+  await sleep(1500);
 
   await client.send('Runtime.evaluate', {
-    expression: `document.getElementById('societyEnquiryForm').scrollIntoView({ block: 'center' });`
+    expression: `window.scrollTo(0, 0);`
   });
   await sleep(500);
 
   const shot = await client.send('Page.captureScreenshot', { format: 'png' });
-  fs.writeFileSync(path.join(outDir, 'contact_form_with_whatsapp_btn.png'), Buffer.from(shot.data, 'base64'));
-  console.log('Contact form with WhatsApp button screenshot captured successfully.');
+  fs.writeFileSync(path.join(outDir, 'header_without_topbar.png'), Buffer.from(shot.data, 'base64'));
+  console.log('Header without topbar screenshot captured successfully.');
 
   client.close();
   chrome.kill();
