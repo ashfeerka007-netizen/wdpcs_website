@@ -491,18 +491,19 @@ PUBLIC_INDEXABLE_PAGES.forEach(page => {
   assert(sitemapContent.includes(expectedUrl), `sitemap.xml contains indexable URL: ${expectedUrl}`);
 });
 
-// 10. OFFICIAL WHATSAPP ENQUIRY FORM ROUTING VERIFICATION (+91 8301995940)
-console.log('\n--- 10. Official WhatsApp Enquiry Form Routing Verification ---');
+// 10. OFFICIAL WHATSAPP ENQUIRY FACILITY & INSTITUTIONAL CONTACT VERIFICATION
+console.log('\n--- 10. Official WhatsApp Enquiry Facility & Institutional Contact Verification ---');
 const contactFormHtml = fs.readFileSync(path.join(ROOT_DIR, 'contact.html'), 'utf-8');
 const contactFormJs = fs.readFileSync(path.join(ROOT_DIR, 'js/contact.js'), 'utf-8');
 
-assert(contactFormHtml.includes('8301995940'), 'contact.html explicitly references WhatsApp helpline 8301995940');
-assert(contactFormHtml.includes('id="societyEnquiryForm"'), 'contact.html contains #societyEnquiryForm');
-assert(contactFormHtml.includes('id="enquiryWhatsAppBtn"'), 'contact.html contains WhatsApp submit button');
-assert(contactFormHtml.includes('id="termsConsentCard"'), 'contact.html contains terms consent card');
-assert(contactFormJs.includes('918301995940'), 'js/contact.js targets WhatsApp number 918301995940');
-assert(contactFormJs.includes('https://wa.me/'), 'js/contact.js generates wa.me direct message link');
-assert(contactFormJs.includes('termsConsentCard'), 'js/contact.js validates and styles terms consent');
+assert(contactFormHtml.includes('8301995940'), 'contact.html explicitly features WhatsApp number 8301995940');
+assert(contactFormHtml.includes('wdpcs.208@gmail.com'), 'contact.html explicitly states official mailbox wdpcs.208@gmail.com');
+assert(contactFormHtml.includes('04936 205940') || contactFormHtml.includes('04936205940'), 'contact.html explicitly includes landline 04936 205940');
+assert(contactFormHtml.includes('id="startWhatsAppChatBtn"'), 'contact.html contains #startWhatsAppChatBtn');
+assert(contactFormHtml.includes('class="wa-topic-chip"'), 'contact.html contains 1-tap WhatsApp quick topic chips');
+assert(contactFormJs.includes('8301995940'), 'js/contact.js targets society WhatsApp 8301995940');
+assert(contactFormJs.includes('https://wa.me/'), 'js/contact.js creates official wa.me direct chat link');
+assert(contactFormJs.includes('startWhatsAppChatBtn'), 'js/contact.js binds click event to startWhatsAppChatBtn');
 
 console.log('\n==================================================');
 console.log(`TEST SUMMARY: ${passedTests}/${totalTests} tests passed (${failedTests} failures)`);
