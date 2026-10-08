@@ -82,17 +82,17 @@ async function capture() {
     mobile: false
   });
 
-  await client.send('Page.navigate', { url: 'http://localhost:8080/rooms-dormitories.html' });
+  await client.send('Page.navigate', { url: 'http://localhost:8080/index.html' });
   await sleep(1500);
 
   await client.send('Runtime.evaluate', {
-    expression: `document.querySelector('.room-card').scrollIntoView({ block: 'center' });`
+    expression: `document.getElementById('rooms-highlight-title').scrollIntoView({ block: 'center' });`
   });
   await sleep(500);
 
   const shot = await client.send('Page.captureScreenshot', { format: 'png' });
-  fs.writeFileSync(path.join(outDir, 'rooms_dormitory_card_uncropped.png'), Buffer.from(shot.data, 'base64'));
-  console.log('Uncropped Rooms & Dormitory card screenshot captured successfully.');
+  fs.writeFileSync(path.join(outDir, 'index_rooms_single_button.png'), Buffer.from(shot.data, 'base64'));
+  console.log('Index rooms single button screenshot captured successfully.');
 
   client.close();
   chrome.kill();
