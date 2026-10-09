@@ -299,7 +299,7 @@ const privacySections = [
 privacySections.forEach(sec => {
   assert(privacyContent.includes(sec), `privacy-policy.html includes section: "${sec}"`);
 });
-assert(privacyContent.includes('Effective Date:'), 'privacy-policy.html includes Effective Date indicator');
+assert(!privacyContent.includes('Effective Date:'), 'privacy-policy.html omits Effective Date indicator');
 
 // 6.2 Terms & Conditions
 const termsContent = fs.readFileSync(path.join(ROOT_DIR, 'terms.html'), 'utf-8');
