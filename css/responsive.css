@@ -301,6 +301,9 @@ textarea,
   .board-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--space-4);
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .glance-grid {
@@ -648,11 +651,18 @@ textarea,
   .grid-6,
   .gallery-grid,
   .gallery-grid-2col,
-  .board-grid,
   .glance-grid,
   .footer-grid {
     grid-template-columns: 1fr;
     gap: var(--space-4);
+  }
+
+  .board-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .quick-access-card {
@@ -663,11 +673,15 @@ textarea,
   .service-item-card,
   .room-card,
   .value-card,
-  .director-card,
   .mv-statement-box,
   .enquiry-form-card,
   .gallery-album-section {
     padding: var(--space-5);
+    border-radius: var(--radius-lg);
+  }
+
+  .director-card {
+    padding: 16px 14px 14px;
     border-radius: var(--radius-lg);
   }
 
