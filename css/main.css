@@ -1445,3 +1445,23 @@ li {
   color: var(--color-white);
   text-decoration: underline;
 }
+
+/* Defensive fallback constraints for SVG icons and director contact pills */
+.director-phone {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.director-phone svg {
+  width: 13px !important;
+  height: 13px !important;
+  min-width: 13px !important;
+  min-height: 13px !important;
+  max-width: 13px !important;
+  max-height: 13px !important;
+  fill: currentColor !important;
+  flex-shrink: 0 !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
