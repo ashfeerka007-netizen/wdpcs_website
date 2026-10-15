@@ -284,10 +284,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const matches = SITE_SEARCH_INDEX.filter(item => {
       const fullText = `${item.title} ${item.category} ${item.description} ${item.keywords}`.toLowerCase();
-      
+
       // Exact title match gets top priority
       if (item.title.toLowerCase().includes(cleanQuery)) return true;
-      
+
       // Check if all or any term matches
       return terms.some(term => fullText.includes(term));
     });
@@ -360,13 +360,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (searchInput) {
+    let debounceTimer;
     searchInput.addEventListener('input', (e) => {
+      clearTimeout(debounceTimer);
       const val = e.target.value.trim();
-      if (val.length >= 2) {
-        performSearch(val);
-      } else if (val.length === 0) {
-        performSearch('');
-      }
+      debounceTimer = setTimeout(() => {
+        if (val.length >= 2) {
+          performSearch(val);
+        } else if (val.length === 0) {
+          performSearch('');
+        }
+      }, 120);
     });
   }
 });

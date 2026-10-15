@@ -68,10 +68,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   if (searchInput) {
+    let debounceTimer;
     searchInput.addEventListener('input', (e) => {
-      currentSearch = e.target.value.trim().toLowerCase();
-      visibleLimit = 6;
-      filterNotices();
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        currentSearch = e.target.value.trim().toLowerCase();
+        visibleLimit = 6;
+        filterNotices();
+      }, 100);
     });
   }
 

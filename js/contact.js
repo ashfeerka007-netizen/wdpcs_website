@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (categorySelect && topic) {
         for (let i = 0; i < categorySelect.options.length; i++) {
-          if (categorySelect.options[i].value.toLowerCase().includes(topic.toLowerCase()) || 
+          if (categorySelect.options[i].value.toLowerCase().includes(topic.toLowerCase()) ||
               topic.toLowerCase().includes(categorySelect.options[i].value.toLowerCase())) {
             categorySelect.selectedIndex = i;
             break;
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const refNumber = `WDPCS-${Date.now().toString().slice(-6)}`;
 
       // Construct formatted WhatsApp message
-      const waMessage = 
+      const waMessage =
         `*OFFICIAL ENQUIRY - WAYANAD DISTRICT POLICE CO-OPERATIVE SOCIETY (W 208)*\n` +
         `----------------------------------------\n` +
         `*Name:* ${senderDisplayName}\n` +

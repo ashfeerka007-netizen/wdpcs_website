@@ -8,7 +8,7 @@
   <meta name="keywords" content="WDPCS accessibility statement, WCAG conformance, accessible police cooperative website, font resizer">
   <link rel="canonical" href="https://ashfeerka007-netizen.github.io/WDPCS-website/accessibility.html">
   <meta name="robots" content="index, follow">
-  
+
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="Accessibility Statement | WDPCS Wayanad">
@@ -17,18 +17,25 @@
   <meta property="og:image" content="https://ashfeerka007-netizen.github.io/WDPCS-website/assets/images/society-building.jpg">
   <meta property="og:site_name" content="WDPCS">
   <meta property="og:locale" content="en_IN">
-  
+
   <!-- Twitter / X Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Accessibility Statement | WDPCS Wayanad">
   <meta name="twitter:description" content="Read the accessibility commitments, standard conformance, and support channels for Wayanad District Police Co-operative Society Ltd No. W 208.">
   <meta name="twitter:image" content="https://ashfeerka007-netizen.github.io/WDPCS-website/assets/images/society-building.jpg">
-  
+
   <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
   <link rel="apple-touch-icon" href="assets/images/favicon.svg">
   <link rel="manifest" href="site.webmanifest">
   <meta name="theme-color" content="#1e3e62">
-  
+
+  <!-- Preconnect Google Fonts -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+
   <!-- Stylesheets -->
   <link rel="stylesheet" href="css/main.css">
   <link rel="stylesheet" href="css/components.css">
@@ -90,7 +97,7 @@
     <div class="container header-inner">
       <a href="index.html" class="society-brand" title="Wayanad District Police Co-operative Society Ltd. No. W 208">
         <div class="brand-logo-wrap" title="Official Society Logo">
-          <img src="assets/images/society-logo.svg" alt="Society Logo" class="brand-logo-img">
+          <img src="assets/images/society-logo.svg" alt="Society Logo" class="brand-logo-img" decoding="async">
         </div>
         <div class="brand-text">
           <span class="brand-title">Wayanad District Police Co-operative Society</span>
@@ -158,7 +165,7 @@
   <main id="main-content" class="section">
     <div class="container container-narrow">
       <div class="card" style="padding: var(--space-8);">
-        
+
         <div class="admin-placeholder-box" style="margin-top: 0; margin-bottom: var(--space-6);">
           <strong>Review Record:</strong>
           <span><strong>Last Reviewed:</strong> <span class="admin-placeholder">[DATE]</span> | Wayanad District Police Co-operative Society Ltd. No. W 208</span>
@@ -170,7 +177,7 @@
         </p>
 
         <h2 style="font-size: var(--text-2xl); color: var(--color-primary-950); margin-top: var(--space-6); margin-bottom: var(--space-3);">Accessibility Provisions on this Website</h2>
-        
+
         <ul class="service-features-list" style="margin: var(--space-4) 0;">
           <li>
             <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
@@ -215,7 +222,7 @@
         <p>
           We welcome feedback on the accessibility of this website. If you encounter accessibility barriers, please contact our administrative desk:
         </p>
-        
+
         <div style="background: var(--color-neutral-50); border: 1px solid var(--color-neutral-200); border-radius: var(--radius-md); padding: var(--space-4); margin: var(--space-4) 0;">
           <p style="margin-bottom: var(--space-2);"><strong>Email:</strong> <a href="mailto:wdpcs.208@gmail.com" style="color:inherit; text-decoration:none; font-weight:700;">wdpcs.208@gmail.com</a></p>
           <p style="margin-bottom: 0;"><strong>Phone:</strong> <a href="tel:04936205940" style="color:inherit; text-decoration:none; font-weight:700;">04936 205940</a></p>
@@ -256,7 +263,7 @@
         <div class="footer-brand">
           <div style="display: flex; align-items: center; gap: var(--space-3);">
             <div style="width: 44px; height: 44px; background: #fff; border-radius: var(--radius-md); padding: 3px;">
-              <img src="assets/images/society-logo.svg" alt="Society Logo" style="width:100%; height:100%; object-fit:contain;">
+              <img src="assets/images/society-logo.svg" alt="Society Logo" style="width:100%; height:100%; object-fit:contain;" decoding="async" loading="lazy">
             </div>
             <div>
               <div class="footer-title">Wayanad District Police Co-operative Society</div>
@@ -339,6 +346,6 @@
     </div>
   </footer>
 
-  <script src="js/main.js"></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

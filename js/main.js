@@ -78,11 +78,15 @@ function initMobileNav() {
   });
 
   // Handle resize from mobile to desktop
+  let resizeTimer;
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 1160 && mainNav.classList.contains('active')) {
-      closeMenu();
-    }
-  });
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      if (window.innerWidth > 1160 && mainNav.classList.contains('active')) {
+        closeMenu();
+      }
+    }, 100);
+  }, { passive: true });
 }
 
 /* ==========================================================================

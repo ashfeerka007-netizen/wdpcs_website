@@ -51,9 +51,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Filter by search query
   if (searchInput) {
+    let debounceTimer;
     searchInput.addEventListener('input', (e) => {
-      currentSearch = e.target.value.trim().toLowerCase();
-      filterDocuments();
+      clearTimeout(debounceTimer);
+      debounceTimer = setTimeout(() => {
+        currentSearch = e.target.value.trim().toLowerCase();
+        filterDocuments();
+      }, 100);
     });
   }
 
