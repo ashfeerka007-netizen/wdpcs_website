@@ -274,6 +274,8 @@ const expectedDirectors = [
 expectedDirectors.forEach(dir => {
   assert(aboutContent.includes(dir), `about.html contains Director: ${dir}`);
 });
+assert(fs.existsSync(path.join(ROOT_DIR, 'assets/images/director-ajeesh-p-s.jpg')), 'director-ajeesh-p-s.jpg photo asset exists');
+assert(aboutContent.includes('assets/images/director-ajeesh-p-s.jpg'), 'about.html references director-ajeesh-p-s.jpg photo');
 
 console.log('\n==================================================');
 console.log('6. VERIFYING SUPPORTING & LEGAL PAGES SPECIFICS');
